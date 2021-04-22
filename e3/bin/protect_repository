@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+"""
+Python script to gitlab repositories part of specified gitlab group.
+
+Changes permissions so that - for specified branch - users with maintainer+ permissions can merge, but no one can push. Also allows for setting up protected tags.
+
+Accepts a group ID. Requires confirmation before applying change.
+Requires being maintainer or owner to execute.
+
+Requires a python-gitlab configuration file (e.g. ~/.python-gitlab.cfg) with 'ess-config' defined.
+"""
+
+import argparse
+import sys
+
+import gitlab
+
+from e3.gitlab.core import protect_branch, protect_tag
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Script that protects projects belonging to a specified group"
+    )
+    parser.add_argument("group_id", type=int, help="gitlab group ID")
+    parser.add_argument("--dry-run", action="store_true", help="simulate action")
+    parser.add_argument("-t", "--tag", action="store_true", help="protect all tags")
+    args = parser.parse_args()
+    group_id = args.group_id
+    tag = args.tag
+    dry_run = args.dry_run
+    if not group_id:
+        sys.exit(1)
+
+    gl = gitlab.Gitlab.from_config("ess-gitlab")
+    group = gl.groups.get(group_id)
+    group_projects = group.projects.list(all=True)
+
+    print(
+        f"You have defined group {group_id}: {group.name}\n\n"
+        f"The 'master' branch for all projects in this group will be protected."
+    )
+    if tag:
+        print("All tags ('*') will also be protected\n")
+    print("This group contains the following projects:")
+    for gp in group_projects:
+        print(f"{gp.name}")
+
+    confirmation = input("Do you wish to continue? ")
+    if confirmation.lower() not in ("y", "yes"):
+        sys.exit(1)
+
+    for gp in group_projects:
+        project = gl.projects.get(
+            gp.id
+        )  # need to convert type from GroupProject to Project
+        protect_branch(
+            project,
+            branch="master",
+            allowed_to_push=gitlab.NO_ACCESS,
+            allowed_to_merge=gitlab.MAINTAINER_ACCESS,
+            simulate=dry_run,
+        )
+        if tag:
+            protect_tag(project, tag="*", simulate=dry_run)
+
+    print("Done")
+
+
+if __name__ == "__main__":
+    if sys.version_info < (3, 6, 0):
+        sys.stderr.write("You need python 3.6 or later to run this script\n")
+        sys.exit(1)
+
+    main()

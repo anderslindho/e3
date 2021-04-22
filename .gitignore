@@ -1,0 +1,10 @@
+venv/
+build/
+modules/
+
+.vscode/
+
+*.tmp.*
+*.tmp
+**/*.tmp.*
+**/*.tmp

@@ -1,8 +1,6 @@
 config:
   base: 7.0.4
   require: 3.3.0
-meta:
-  ordered: true
 modules:
   - name: asyn
     versions: [4.37.0]

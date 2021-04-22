@@ -8,19 +8,21 @@ from pathlib import Path
 import yaml
 
 
-def get_module_difference(source_file, target_file) -> dict:
-    """Return module set difference (one way) of two specification files."""
-    with open(source_file, "r") as f:
-        source = yaml.safe_load(source_file)
-    with open(target_file, "r") as f:
-        target = yaml.safe_load(target_file)
+def module_loader(specification_file: Path) -> dict:
+    """Load specification file."""
+    with open(specification_file, "r") as f:
+        specification = yaml.safe_load(f)
+    modules: dict = {
+        module["name"]: module["versions"] for module in specification["modules"]
+    }
+    return modules
 
-    source_modules: dict = {
-        module["name"]: module["versions"] for module in source["modules"]
-    }
-    target_modules: dict = {
-        module["name"]: module["versions"] for module in target["modules"]
-    }
+
+def get_module_difference(source_file: Path, target_file: Path) -> dict:
+    """Return module set difference (one way) of two specification files."""
+    source_modules: dict = module_loader(source_file)
+    target_modules: dict = module_loader(target_file)
+
     diff_modules = dict()
     for module, versions in target_modules.items():
         if module not in source_modules.keys():
@@ -33,4 +35,3 @@ def get_module_difference(source_file, target_file) -> dict:
                 diff_modules[module] = diff_versions
 
     return diff_modules
-

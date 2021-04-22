@@ -3,17 +3,17 @@
 Python utility to build and to generate configuration files from a specification.
 """
 
-import io
 import sys
-from contextlib import redirect_stdout
 from pathlib import Path
 
-import gitlab
 import yaml
 
+from e3.gitlab.core import get_module_url  # noqa: F401
 
-# todo: add get_module_url
-def set_up_modules(root_path: Path, modules: dict) -> None:
+# todo: replace print with logging
+
+
+def clone_modules(root_path: Path, modules: dict) -> None:
     """
     Clone modules to defined location.
 
@@ -78,7 +78,13 @@ def create_tree(
             print(base_path / module["name"] / version)
 
 
-def build(specification_file, build_dirs: list = None, clone_dir: Path = None, clone: bool = True, create_local: bool = True) -> None:
+def build(
+    specification_file,
+    build_dirs: list = None,
+    clone_dir: Path = None,
+    clone: bool = True,
+    create_local: bool = True,
+) -> None:
     """Build modules from specification."""
     package_path = Path(__file__).parent.absolute()
     if clone and clone_dir is None:
@@ -135,7 +141,7 @@ def build(specification_file, build_dirs: list = None, clone_dir: Path = None, c
 
         for build_dir in build_dirs:
             if clone:
-                set_up_modules(root_path=clone_dir, modules=modules)
+                clone_modules(root_path=clone_dir, modules=modules)
             if create_local:
                 create_local_files(
                     root_path=clone_dir,
@@ -149,5 +155,3 @@ def build(specification_file, build_dirs: list = None, clone_dir: Path = None, c
                 require_ver=require_version,
                 modules=modules,
             )
-
-
