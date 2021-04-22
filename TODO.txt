@@ -1,7 +1,1 @@
-Consider keeping leaf-nodes under separate entry (probably not)
-Consider adding missing modules under separate entry (arg)
-Be able to show diff between one file and another (one way only!) and/or between a spec and an environment  # will be done next
-Build also base and require ?
-Possibly light check of dependencies prior to builds
-What about transferring build numbers? (should we list also the build nbrs?)
-List high level objectives
+Build also base and require
