@@ -1,0 +1,2 @@
+PyYAML==5.4.1
+deepdiff==5.2.3

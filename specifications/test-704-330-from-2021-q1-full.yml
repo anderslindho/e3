@@ -1,0 +1,178 @@
+config:
+  base: null
+  cct: null
+  require: null
+meta:
+  datestamp: '2021-03-28T14:02:07.520709'
+  environment: /epics/base-7.0.4/require/3.3.0
+  infile: /mnt/c/dev/e3-specification/specifications/2021-q1-full.yaml
+  ordered: true
+modules:
+- name: auth
+  versions:
+  - null
+- name: autosave
+  versions:
+  - 5.10.0
+  - 5.10.0-1
+- name: caputlog
+  versions:
+  - b544f92
+- name: asyn
+  versions:
+  - 4.37.0
+- name: busy
+  versions:
+  - 1.7.2_c596e1c
+- name: modbus
+  versions:
+  - 3.0.0
+  - 3.1.0
+- name: ipmicomm
+  versions:
+  - 4.2.5
+- name: seq
+  versions:
+  - null
+- name: sscan
+  versions:
+  - 2.11.3
+- name: std
+  versions:
+  - 3.6.1
+- name: motor
+  versions:
+  - 7.0.3
+  - 7.0.4
+- name: ip
+  versions:
+  - 2.20.1
+- name: calc
+  versions:
+  - 3.7.3
+- name: iocstats
+  versions:
+  - 3.1.16
+  - 3.1.16-1
+- name: delaygen
+  versions:
+  - 1.2.1
+- name: pcre
+  versions:
+  - 8.41.0
+- name: stream
+  versions:
+  - 2.8.10
+- name: s7plc
+  versions:
+  - 1.4.1
+- name: recsync
+  versions:
+  - 1.3.0-9705e52
+  - 1.3.0-9705e52-1
+- name: essioc
+  versions:
+  - null
+- name: mcoreutils
+  versions:
+  - 1.2.2
+- name: opcua
+  versions:
+  - 0.8.0-dev
+  - 0.5.2-test
+  - 0.8.0-rc1
+  - 0.8.0
+- name: nds3
+  versions:
+  - 3.0.0
+- name: nds3epics
+  versions:
+  - 1.0.1
+- name: devlib2
+  versions:
+  - 2.9.0
+- name: mca
+  versions:
+  - 7.9.0-ESS0
+- name: adsupport
+  versions:
+  - 1.9.0
+- name: adcore
+  versions:
+  - 3.9.0
+- name: nds
+  versions:
+  - 2.3.4
+  - 2.3.4-1
+removed_modules:
+- name: ess
+- name: sequencer
+- name: xtpico
+- name: mrfioc2
+- name: evr_seq_calc
+- name: evr_timestamp_buffer
+- name: exprtk
+- name: ecmc
+- name: ethercatmc
+- name: ecmccfg
+- name: beckhoffads
+- name: ads
+- name: tsc
+- name: ifcdaqdrv
+- name: caenelsmagnetps
+- name: fug
+- name: sairem
+- name: sorensen
+- name: tdklambdagenesys
+- name: magnetps
+- name: loki
+- name: scaling
+- name: sis8300drv
+- name: sis8300
+- name: sis8300llrfdrv
+- name: sis8300llrf
+- name: vac_ctrl_halrcrga
+- name: vac_ctrl_leyboldtd20
+- name: vac_ctrl_mks946_937b
+- name: vac_ctrl_tcp350
+- name: vac_gauge_mks_vgc
+- name: vac_gauge_mks_vgd
+- name: vac_gauge_mks_vgp
+- name: vac_mfc_mks_gv50a
+- name: vacs_accv_vac_ioc_11010
+- name: vacs_accv_vac_plc_01001
+- name: vacs_accv_vac_plc_10001
+- name: vac_starting_switchyard
+- name: adsimdetector
+- name: adcsimdetector
+- name: nddriverstdarrays
+- name: adandor
+- name: adandor3
+- name: adpointgrey
+- name: adprosilica
+- name: adgenicam
+- name: adpluginedge
+- name: adplugincalib
+- name: keypress
+- name: sysfs
+- name: symbolname
+- name: memdisplay
+- name: regdev
+- name: iocshutils
+- name: adsis8300
+- name: adsis8300bcm
+- name: adsis8300bpm
+- name: adsis8300fc
+- name: caenelfastps
+- name: common
+- name: admisc
+- name: calibration
+- name: adps4000a
+- name: llrfsystem
+- name: rs_nrpxxsn
+- name: crome
+- name: supercycleengine
+- name: mpsplc
+- name: caensyproxy
+- name: dln
+- name: scu

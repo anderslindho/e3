@@ -1,0 +1,16 @@
+config:
+  base: 7.0.4
+  require: 3.3.0
+meta:
+  ordered: true
+modules:
+  - name: asyn
+    versions: [4.37.0]
+  - name: stream
+    versions: [2.8.18]
+  - name: auth
+    versions: [0.1.0]
+  - name: essioc
+    versions: [0.4.1]
+  - name: common
+    versions: [0.4.0]

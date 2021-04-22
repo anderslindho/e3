@@ -1,0 +1,291 @@
+config:
+  base: 7.0.5
+  cct: null
+  require: 3.4.0
+meta:
+  datestamp: '2021-03-31T14:49:39.478491'
+  environment: /epics/base-7.0.5/require/3.4.0
+  infile: null
+  ordered: false
+modules:
+- name: auth
+  versions:
+  - 0.1.0
+  - 0.2.0
+- name: autosave
+  versions:
+  - 5.10.2
+- name: caputlog
+  versions:
+  - 3.7.0
+- name: asyn
+  versions:
+  - 4.41.0
+- name: busy
+  versions:
+  - 1.7.3
+- name: modbus
+  versions:
+  - 3.2.0
+- name: ipmicomm
+  versions:
+  - 4.2.5
+- name: sequencer
+  versions:
+  - 2.2.8
+- name: sscan
+  versions:
+  - 2.11.4
+- name: std
+  versions:
+  - 3.6.2
+- name: motor
+  versions:
+  - 7.0.4
+- name: ip
+  versions:
+  - 2.21.0
+- name: calc
+  versions:
+  - 3.7.4
+- name: iocstats
+  versions:
+  - 3.1.16
+- name: delaygen
+  versions:
+  - 1.2.2
+- name: pcre
+  versions:
+  - 8.44.0
+- name: stream
+  versions:
+  - 2.8.18
+- name: s7plc
+  versions:
+  - 1.4.1
+- name: recsync
+  versions:
+  - 1.3.0-eb33785
+- name: mcoreutils
+  versions:
+  - 1.2.2
+- name: opcua
+  versions:
+  - 0.8.0
+  - 0.8.0
+- name: nds3
+  versions:
+  - 3.0.0
+- name: nds3epics
+  versions:
+  - 1.0.1
+- name: devlib2
+  versions:
+  - 2.11.0
+- name: mca
+  versions:
+  - 7.9.0-ESS0
+- name: mrfioc2
+  versions:
+  - 2.2.1
+  - 2.3.1-beta.3
+  - 2.3.1-beta.3.1
+- name: evr_seq_calc
+  versions:
+  - 1.0.0
+- name: exprtk
+  versions:
+  - 1.2.1
+- name: ecmc
+  versions:
+  - 6.3.2
+- name: ethercatmc
+  versions:
+  - 3.0.4
+- name: ecmccfg
+  versions:
+  - 6.3.2
+- name: beckhoffads
+  versions:
+  - 1.0.0
+- name: ads
+  versions:
+  - 2.0.2
+- name: tsc
+  versions:
+  - 4.0.8
+- name: ifcdaqdrv
+  versions:
+  - 4.0.0-beta
+- name: caenelsmagnetps
+  versions:
+  - 1.1.0
+- name: fug
+  versions:
+  - 3.1.0
+- name: sairem
+  versions:
+  - 3.0.0
+- name: sorensen
+  versions:
+  - 1.1.0
+- name: tdklambdagenesys
+  versions:
+  - 1.2.0
+- name: magnetps
+  versions:
+  - 1.0.1
+- name: caenelfastps
+  versions:
+  - 1.0.0
+- name: caensyproxy
+  versions:
+  - 1.1.0
+- name: loki
+  versions:
+  - 1.0.0
+- name: nds
+  versions:
+  - 2.3.4
+- name: scaling
+  versions:
+  - 1.7.1
+- name: sis8300drv
+  versions:
+  - 4.9.1
+- name: sis8300
+  versions:
+  - 3.3.0
+- name: sis8300llrfdrv
+  versions:
+  - 5.8.0
+- name: sis8300llrf
+  versions:
+  - 4.6.1
+  - 4.6.2
+- name: llrfsystem
+  versions:
+  - 2.7.2
+- name: xtpico
+  versions:
+  - 0.9.0
+- name: crome
+  versions:
+  - 0.1.0
+- name: vac_ctrl_halrcrga
+  versions:
+  - 3.0.0
+- name: vac_ctrl_leyboldtd20
+  versions:
+  - 3.1.0
+- name: vac_ctrl_mks946_937b
+  versions:
+  - 4.1.0
+- name: vac_ctrl_tcp350
+  versions:
+  - 1.0.0
+- name: vacs_accv_vac_ioc_11010
+  versions:
+  - 2.0.0
+- name: vacs_accv_vac_plc_01001
+  versions:
+  - 5.0.1
+- name: vacs_accv_vac_plc_10001
+  versions:
+  - 5.0.1
+- name: vac_starting_switchyard
+  versions:
+  - 3.0.1
+- name: adsupport
+  versions:
+  - 1.9.0
+- name: adcore
+  versions:
+  - 3.10.0
+- name: adsimdetector
+  versions:
+  - 2.10.0
+- name: adcsimdetector
+  versions:
+  - 2.5.0-7c5fa66
+- name: nddriverstdarrays
+  versions:
+  - 1.3.0-9cbc817
+- name: adandor
+  versions:
+  - 2.8.0-8c826b3
+- name: adandor3
+  versions:
+  - 2.2.0-efba947
+- name: adpointgrey
+  versions:
+  - 2.9.0
+- name: adprosilica
+  versions:
+  - 2.5.0-10bfc26
+- name: adgenicam
+  versions:
+  - 1.4.0
+- name: adpluginedge
+  versions:
+  - 1.2.0-86eb685
+- name: adplugincalib
+  versions:
+  - 0.0.1
+- name: keypress
+  versions:
+  - 1.0.0
+- name: sysfs
+  versions:
+  - 1.0.0
+- name: symbolname
+  versions:
+  - 1.0.2
+- name: memdisplay
+  versions:
+  - 1.2.1
+- name: regdev
+  versions:
+  - 3.4.16
+- name: iocshutils
+  versions:
+  - 2.10.0
+- name: adsis8300
+  versions:
+  - 1.9.1
+- name: adsis8300bcm
+  versions:
+  - 0.9.2
+- name: adsis8300bpm
+  versions:
+  - 0.9.1
+- name: adsis8300fc
+  versions:
+  - 1.9.1
+- name: adps4000a
+  versions:
+  - master
+- name: admisc
+  versions:
+  - 2.1.1
+- name: nblmapp
+  versions:
+  - 1.0.0
+- name: mpsplc
+  versions:
+  - 1.0.1
+  - 1.0.2
+  - 1.1.0
+- name: dln
+  versions:
+  - 1.0.0
+- name: scu
+  versions:
+  - 1.0.0
+- name: rfqvoltprof
+  versions:
+  - 1.0.0
+- name: essioc
+  versions:
+  - 0.4.1
+  - 0.5.0

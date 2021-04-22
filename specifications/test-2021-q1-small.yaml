@@ -1,0 +1,19 @@
+config:
+  base: 7.0.5
+  require: 3.4.0
+
+modules:
+  - name: asyn
+    git_url: git@gitlab.esss.lu.se:e3/common/e3-asyn.git
+    versions:
+      - 4.37.0
+      - 4.41.0
+  - name: stream
+    git_url: git@gitlab.esss.lu.se:e3/common/e3-stream.git
+    versions: [2.8.18]
+  - name: auth
+    git_url: git@gitlab.esss.lu.se:e3/common/e3-auth.git
+    versions: [0.1.0]
+  - name: essioc
+    git_url: git@gitlab.esss.lu.se:e3/common/e3-essioc.git
+    versions: [0.4.1]

@@ -1,0 +1,73 @@
+config:
+  base: 7.0.5
+  require: 3.4.0
+  cct: 0.0.21
+meta:
+  ordered: True
+modules:
+  # common
+  - name: auth
+    versions:
+      - 0.1.0
+      - 0.2.0
+  - name: autosave
+    versions: [5.10.2]
+  - name: caputlog
+    versions: [3.7.0]
+  - name: asyn
+    versions:
+      - 4.37.0
+      - 4.41.0
+  - name: busy
+    versions: [1.7.3]
+  - name: modbus
+    versions: [3.2.0]
+  - name: ipmicomm
+    versions: [4.2.5]
+  - name: seq
+    versions: [2.2.8]
+  - name: sscan
+    versions: [2.11.4]
+  - name: std
+    versions: [3.6.2]
+  - name: motor
+    versions: [7.0.4-ESS]
+  - name: ip
+    versions: [2.21.0]
+  - name: calc
+    versions: [3.7.4]
+  - name: iocstats
+    versions: [3.1.16]
+  - name: delaygen
+    versions: [1.2.2]
+  - name: pcre
+    versions: [8.44.0]
+  - name: stream
+    versions: [2.8.18]
+  - name: s7plc
+    versions: [1.4.1]
+  - name: recsync
+    versions: [1.3.0-eb33785]
+  - name: essioc
+    versions:
+      - 0.4.1
+      - 0.5.0
+  - name: mcoreutils
+    versions: [1.2.2]
+  - name: opcua
+    versions: [0.8.0]
+  - name: nds3
+    versions: [3.0.0]
+  - name: nds3epics
+    versions: [1.0.1]
+  - name: devlib2
+    versions: [2.11.0]
+  - name: mca
+    versions: [7.9.0-ESS0]
+  # remaining from 2021Q1 confluence page
+  - name: adsupport
+    versions: [1.9.0]
+  - name: adcore
+    versions: [3.10.0]
+  - name: nds
+    versions: [2.3.4]
