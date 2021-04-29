@@ -89,9 +89,11 @@ def generate_specification(args) -> None:
         specification["modules"]: list = []
         modules = dict()
         for module in sitemods_path.iterdir():
+            # todo: read commit tag from module_meta.yaml file instead
             modules[module.stem]: list = [
                 re.sub(r"\+\d+", r"", version.name) for version in module.iterdir()
             ]
+        # todo: write to 'tags' instead
         for module, versions in modules.items():
             specification["modules"].append({"name": module, "versions": versions})
 
@@ -100,6 +102,7 @@ def generate_specification(args) -> None:
         "datestamp": datetime.datetime.now().isoformat(),
         "ordered": ordered,
         "infile": infile,
+        "toolkit_version": "0.0.1",
     }
     # todo: add info also about version of this package?
 

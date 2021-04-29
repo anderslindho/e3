@@ -2,17 +2,22 @@ import pprint
 from typing import NoReturn
 
 import gitlab
-from gitlab.v4.objects import Project
+
+
+# todo: implement
+def get_module_url(project):
+    raise NotImplementedError()
 
 
 def protect_branch(
-    project: Project = None,
-    branch: str = None,
+    project,
+    branch: str,
     allowed_to_push: int = gitlab.DEVELOPER_ACCESS,
     allowed_to_merge: int = gitlab.DEVELOPER_ACCESS,
     simulate: bool = True,
 ) -> NoReturn:
-    """Protects branch.
+    """
+    Protects branch.
 
     :param project: affected gitlab project/repository
     :param branch: branch name or wildcard
@@ -20,9 +25,6 @@ def protect_branch(
     :param allowed_to_merge: minimum gitlab access level required to merge
     :param simulate: dry-run option
     """
-    if project is None or branch is None:
-        raise ValueError
-
     if simulate:
         print(f"Branch '{branch}' of {project.name} would have been protected")
     else:
@@ -44,18 +46,14 @@ def protect_branch(
             print("Protected branch:", pprint.pformat(vars(p_branch)))
 
 
-def protect_tag(
-    project: Project = None, tag: str = None, simulate: bool = True
-) -> NoReturn:
-    """Protects tag.
+def protect_tag(project, tag: str, simulate: bool = True) -> NoReturn:
+    """
+    Protects tag.
 
     :param project: affected gitlab project/repository
     :param tag: tag name or wildcard
     :param simulate: dry-run option
     """
-    if project is None or tag is None:
-        raise ValueError
-
     if simulate:
         print(f"Tag '{tag}'' of {project.name} would have been protected")
     else:

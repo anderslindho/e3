@@ -8,14 +8,14 @@ from pathlib import Path
 
 import yaml
 
-from e3.gitlab.core import get_module_url  # noqa: F401
+# from e3.gitlab.core import get_module_url  # noqa: F401
 
 # todo: replace print with logging
 
 
 def clone_modules(root_path: Path, modules: dict) -> None:
     """
-    Clone modules to defined location.
+    Clone modules to defined locations.
 
     :param root_path: Path to clone to
     :param modules: Modules to clone
@@ -78,19 +78,19 @@ def create_tree(
             print(base_path / module["name"] / version)
 
 
-def build(
-    specification_file,
-    build_dirs: list = None,
-    clone_dir: Path = None,
+def build_e3(
+    specification_file: Path,
     clone: bool = True,
     create_local: bool = True,
+    clone_dir: Path = None,
+    locations: list = None,
 ) -> None:
     """Build modules from specification."""
     package_path = Path(__file__).parent.absolute()
     if clone and clone_dir is None:
         clone_dir = package_path / "modules"
-    if build_dirs is None:
-        build_dirs = [package_path / "build"]
+    if locations is None:
+        locations = [package_path / "build"]
 
     with open(specification_file, "r") as f:
         specification = yaml.safe_load(f)
@@ -127,7 +127,7 @@ def build(
     except KeyError:
         pass
     print("\nFor locations:")
-    for build_dir in build_dirs:
+    for build_dir in locations:
         print(f"- {Path(build_dir)}")
 
     if input("\nConfirm (y/n): ").lower() in ("y", "yes"):
@@ -139,7 +139,7 @@ def build(
             else:
                 print(f"Directory {clone_dir} created.")
 
-        for build_dir in build_dirs:
+        for build_dir in locations:
             if clone:
                 clone_modules(root_path=clone_dir, modules=modules)
             if create_local:

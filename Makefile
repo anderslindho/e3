@@ -1,10 +1,10 @@
 .DEFAULT_GOAL :=
 
 init:
-    pip3 install -r requirements.txt --user
+	pip3 install -r requirements.txt --user
 
 test:
-    pytest --verbose
+	python3 -m pytest --verbose
 
 .PHONY: clean
 clean:
